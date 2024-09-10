@@ -8,8 +8,8 @@ import {
   useSelector,
 } from "react-redux";
 
-import globalReducer from "@/state";
-import { api } from "@/state/api";
+import globalReducer from "@/state/services";
+import { api } from "@/state/services/api";
 
 import {
   FLUSH,

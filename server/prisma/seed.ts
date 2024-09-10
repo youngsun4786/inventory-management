@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import prisma from "./prisma";
+import prisma from ".";
 
 // destroy the entire data before hand then insert the seed to the database
 const deleteAllData = async (orderedFileNames: string[]) => {

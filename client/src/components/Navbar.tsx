@@ -1,8 +1,8 @@
 "use client";
-import { setIsDarkMode, setIsSideBarCollapsed } from "@/state";
+import { useAppDispatch, useAppSelector } from "@/app/redux";
+import { setIsDarkMode, setIsSideBarCollapsed } from "@/state/services";
 import { Bell, Menu, Moon, Settings, Sun } from "lucide-react";
 import Link from "next/link";
-import { useAppDispatch, useAppSelector } from "@/app/redux";
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
