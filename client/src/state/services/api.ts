@@ -1,12 +1,12 @@
 // create boilerplate for api calls
 
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { DashboardMetrics, NewProduct, Product } from "../types";
+import { DashboardMetrics, NewProduct, Product, User } from "../types";
 
 export const api = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_API_BASE_URL }),
   reducerPath: "api",
-  tagTypes: ["DashboardMetrics", "Products"],
+  tagTypes: ["DashboardMetrics", "Products", "Users"],
   endpoints: (build) => ({
     getDashboardMetrics: build.query<DashboardMetrics, void>({
       query: () => "/dashboard",
@@ -15,20 +15,28 @@ export const api = createApi({
     getProducts: build.query<Product[], string | void>({
       query: (search) => ({
         url: "/products",
-        params: search ? { search } : {}
+        params: search ? { search } : {},
       }),
       providesTags: ["Products"],
     }),
     createProduct: build.mutation<Product, NewProduct>({
-      query: (newProduct : NewProduct) => ({
+      query: (newProduct: NewProduct) => ({
         url: "/products",
         method: "POST",
-        body: newProduct
+        body: newProduct,
       }),
-      invalidatesTags: ["Products"]
-    })
-    
+      invalidatesTags: ["Products"],
+    }),
+    getUsers: build.query<User[], void>({
+      query: () => "/users",
+      providesTags: ["Users"],
+    }),
   }),
 });
 
-export const { useGetDashboardMetricsQuery, useGetProductsQuery, useCreateProductMutation } = api;
+export const {
+  useGetDashboardMetricsQuery,
+  useGetProductsQuery,
+  useCreateProductMutation,
+  useGetUsersQuery,
+} = api;

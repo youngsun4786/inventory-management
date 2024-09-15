@@ -116,18 +116,6 @@ const CreateProductModal = ({
               Cancel
             </Button>
           </div>
-
-          {/* <label htmlFor="productName" className={labelStyles}>
-            Product Name
-          </label>
-          <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            onChange={handleChange}
-            value={formData.name}
-            className={inputStyles}
-          /> */}
         </form>
       </div>
     </div>

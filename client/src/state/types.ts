@@ -6,6 +6,12 @@ export interface DashboardMetrics {
   expenseByCategorySummary: ExpenseByCategorySummary[];
 }
 
+export type User = {
+  userId: string;
+  name: string;
+  email: string;
+}
+
 export type Product = {
   productId: string;
   name: string;
