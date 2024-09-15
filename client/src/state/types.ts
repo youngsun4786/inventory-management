@@ -6,7 +6,7 @@ export interface DashboardMetrics {
   expenseByCategorySummary: ExpenseByCategorySummary[];
 }
 
-type Product = {
+export type Product = {
   productId: string;
   name: string;
   price: number;
@@ -14,27 +14,27 @@ type Product = {
   stockQuantity: number;
 };
 
-type SalesSummary = {
+export type SalesSummary = {
   salesSummaryId: string;
   totalValue: number;
   changePercentage?: number;
   date: string;
 };
 
-type PurchaseSummary = {
+export type PurchaseSummary = {
   purchaseSummaryId: string;
   totalPurchased: number;
   changePercentage?: number;
   date: string;
 };
 
-type ExpenseSummary = {
+export type ExpenseSummary = {
   expenseSummaryId: string;
   totalExpenses: number;
   date: string;
 };
 
-type ExpenseByCategorySummary = {
+export type ExpenseByCategorySummary = {
   expenseByCategorySummaryId: string;
   category: string;
   amount: string;
